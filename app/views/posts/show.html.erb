@@ -1,0 +1,19 @@
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody <%= render @post %>
+
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Edit", edit_post_path(@post) %> |
+  <%= link_to "Back", posts_path %>
+
+  <%= button_to "Destroy", @post, method: :delete %>
+</div>

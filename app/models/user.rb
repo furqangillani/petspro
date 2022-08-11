@@ -1,0 +1,7 @@
+class User < ApplicationRecord
+
+  validates :email, uniqueness: true
+  validates :email, presence: true
+  has_many :posts
+
+end
