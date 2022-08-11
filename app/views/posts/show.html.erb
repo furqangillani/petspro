@@ -1,19 +1,20 @@
 
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-  </tr>
-  </thead>
-  <tbody <%= render @post %>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
 
-  </tbody>
-</table>
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
 
-<div>
+<p>
+  <strong>Comments:</strong>
+  <%= render @post.comments.order(id: :desc) %>
+  <%= render partial: 'comments/form', locals: { post: @post } %>
+</p>
+
   <%= link_to "Edit", edit_post_path(@post) %> |
   <%= link_to "Back", posts_path %>
 
-  <%= button_to "Destroy", @post, method: :delete %>
-</div>
