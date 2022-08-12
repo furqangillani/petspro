@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'sessions#destroy'
   resources :sessions, only: [:create]
 
-  resources :comments
+  resources :likes, only: [:create, :destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
